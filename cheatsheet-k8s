@@ -169,4 +169,4 @@ backup/config
 kubectl get all --all-namespaces -o yaml > all-deploy-services.yaml
 
 test tambahin
-tambahin lagi ya
+tambahin lagi ya`

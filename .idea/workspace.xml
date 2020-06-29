@@ -6,20 +6,19 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3acc9e09-027d-4829-9702-0c8ed209e4a5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cheatsheet-k8s" beforeDir="false" afterPath="$PROJECT_DIR$/cheatsheet-k8s" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +27,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1dz4uudZV77Cu7xHi44LizTX2RJ" />
@@ -40,6 +44,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Pod" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -59,7 +64,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -70,6 +87,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="111" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1593415620354" />
+    <state x="286" y="0" key="CommitChangelistDialog2" timestamp="1593417113985">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="286" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1593417113985" />
     <state x="437" y="121" key="FileChooserDialogImpl" timestamp="1593414966387">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -78,5 +99,33 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="480" y="286" key="Github.CreateGistDialog/0.0.1280.680@0.0.1280.680" timestamp="1593415172060" />
+    <state x="440" y="69" key="RollbackChangesDialog" timestamp="1593417099744">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="440" y="69" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1593417099744" />
+    <state x="158" y="0" key="SettingsEditor" timestamp="1593416836293">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="158" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1593416836293" />
+    <state x="414" y="71" key="VCS.ChangeListViewerDialog" timestamp="1593417093354">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="414" y="71" key="VCS.ChangeListViewerDialog/0.0.1280.680@0.0.1280.680" timestamp="1593417093354" />
+    <state x="249" y="99" key="Vcs.Push.Dialog.v2" timestamp="1593417188437">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="249" y="99" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1593417188437" />
+    <state x="455" y="228" key="git4idea.rebase.GitRebaseDialog" timestamp="1593417094998">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="455" y="228" key="git4idea.rebase.GitRebaseDialog/0.0.1280.680@0.0.1280.680" timestamp="1593417094998" />
+    <state x="445" y="268" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1593417140236">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="445" y="268" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1280.680@0.0.1280.680" timestamp="1593417140236" />
+    <state x="439" y="261" key="git4idea.ui.GitResetDialog" timestamp="1593417125759">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="439" y="261" key="git4idea.ui.GitResetDialog/0.0.1280.680@0.0.1280.680" timestamp="1593417125759" />
   </component>
 </project>
