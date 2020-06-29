@@ -167,3 +167,5 @@ kubectl uncordon node01 (from master)
 backup/config
 -------------
 kubectl get all --all-namespaces -o yaml > all-deploy-services.yaml
+
+test tambahin
