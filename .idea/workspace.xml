@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3acc9e09-027d-4829-9702-0c8ed209e4a5" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1dz4uudZV77Cu7xHi44LizTX2RJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Pod" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3acc9e09-027d-4829-9702-0c8ed209e4a5" name="Default Changelist" comment="" />
+      <created>1593414813907</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593414813907</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="437" y="121" key="FileChooserDialogImpl" timestamp="1593414966387">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="437" y="121" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1593414966387" />
+    <state x="480" y="286" key="Github.CreateGistDialog" timestamp="1593415172060">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="480" y="286" key="Github.CreateGistDialog/0.0.1280.680@0.0.1280.680" timestamp="1593415172060" />
+  </component>
+</project>

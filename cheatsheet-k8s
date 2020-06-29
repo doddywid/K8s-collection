@@ -1,0 +1,169 @@
+etcdctl set key value
+etcdctl get key
+
+etcdctl version 2 API
+- etcdctl backup
+- etcdctl cluster-health
+- etcdctl mk
+- etcdctl mkdir
+- etcdctl set
+
+etcdctl version 3 API
+- etcdctl snapshot save
+- etcdctl endpoint health
+- etcdctl get
+- etcdctl put
+
+export ETCDCTL_API=3
+/etc/kubernets/manifests/kube-scheduler.yaml
+kubernetes-controller.service
+kubelet.service
+
+kubectl run nginx --image=nginx
+kubectl run --generator=run-pod/v1 nginx-pod --image=nginx:alpine --restart=Never --labels=tier=db
+kubectl get pods -o wide
+kubectl create deployment webapp --image=kodekloud/webapp-color
+kubectl create deployment elasticsearch --image=k8s.gcr.io/fluentd-elasticsearch:1.20 --dry-run -o yaml > elastic.yaml
+kubectl scale deployment webapp --replicas=3
+kubectl expose pods redis --name=redis-service --port=6379 --target-port=6379
+kubectl get pods -n kube-system
+kubectl get all
+kubectl describe svc redis-service
+kubectl get events
+kubectl logs my-custom-scheduler --name-space=kube-system
+
+db-service.dev.svc.cluster.local
+
+kubectl create namespace dev
+kubectl get pods --namespace=dev
+kubectl config set-context $(kubectl config current-context) --namespace=dev
+
+curl --header "Content-Type: application/json" --request POST --data '{
+  "apiVersion": "v1",
+  "kind": "Binding",
+  "metadata": {
+    "name": "nginx"
+  },
+  "spec": {
+    "apiVersion": "v1",
+    "kind": "Node",
+    "name": "node02"
+  }
+}' http://$SERVER/api/v1/namespaces/default/pods/$PODNAME/binding/
+
+kubectl get pods -l env=dev,bu=finance
+kubectl get pods --show-labels
+kubectl get pods --selector env=dev
+kubectl get pods -l 'env in (production, development)'
+kubectl taint nodes <node-name> key=value:<taint-effect>
+<taint-effect> : NoSchedule|NoExecute|PreferNoSchedule
+kubectl describe node <node-name> | grep Taint
+
+kubectl label nodes node01 size=Large
+
+nodeaffinity operator: In, NotIn, Exists (value not required, only key)
+nodeaffinity type:
+ - requiredDuringSchedulingIgnoredDuringExecution
+ - preferredDuringSchedulingIgnoredDuringExecution
+ - requiredDuringSchedulingRequiredDuringExecution (planned to be added to K8s)
+DuringScheduling: when pod does not exists & created for the first time
+DuringExecutions: pod has been running, & a change is made in the environment & effect nodeaffinity
+
+
+Logs
+---
+docker run kodekloud/event-simulator
+docker run -d kodekloud/event-simulator (not see the logs)
+docker logs -f ecf (see the logs)
+
+kubectl logs -f event-simulator-pod
+kubectl logs -f event-sumulator-pod event-simulator
+kubectl logs -f <name of pod> <name of container>
+
+kubectl rollout status deployment/myapp-deployment
+kubectl rollout history deployment/myapp-deployment
+
+Deployment strategy
+-------------------
+- recreate (not default)
+- rolling update (one by one)
+kubectl apply -f deployment-definition.yaml
+kubectl set image deployment/myapp-deployment nginx=nginx:1.9.1
+kubectl rollout undo deployment/myapp-deployment
+
+
+Command
+-------
+docker run ubuntu
+docker ps (not seen)
+docker ps -a (seen exited state) --> a container only run when the task is incomplete, once the task is complete, the container exists
+who define -> instruction CMD
+docker run ubuntu [COMMAND] --> overrides the command CMD on docker file
+docker run ubuntu sleep 5
+2 ways to define command
+- standard : CMD command param1
+- json array: CMD ["command","param1"]
+docker run ubuntu-sleeper sleep 10 --> normal way
+docker run ubuntu-sleeper 10 --> dg bantuan ENTRYPOINT ["sleep"]
+
+FROM Ubuntu
+ENTRYPOINT ["sleep"]
+CMD ["5"]
+docker run ubuntu-sleeper --> tanpa param tidak error
+
+Environtment variable
+--------------------
+docker run -e APP_COLOR=pink simple-webapp-color
+
+ConfigMap
+---------
+kubectl create configmap <config-name> --from-literal=<key>=<value>
+kubectl create configmap app-config --from-literal=APP_COLOR=blue
+kubectl create configmap <config-name> --from-file=<path-to-file>
+k get configmap
+
+Secret
+------
+kubectl create secret generic app-secret --from-literal=DB_Host=mysql \
+                                         --from-literal=DB_User=root
+                                         --from-literal=DB_Password=paswrd
+kubctl create secret generic <secret-name> --from-file=<path-to-file>
+
+
+kubectl drain node-1
+kubectl uncordon node-1
+kubectl cordon node-1 #does not terminate existing pods
+
+Kubernetes versioning
+---------------------
+1.18.1 ==> major.minor.patch
+recommended same version all components,but can also:
+kube-apiserver : x
+controller-manager: x-1
+kube-scheduler: x-1
+kubectl: x+1 > x-1
+kubelet: x-2
+kube-proxy: x-2
+Kubernets only support up to 3 recent minor version to current
+recommended upgrade is 1 minor version at a time
+kubeadm upgrade plan
+kubeadm upgrade apply
+
+apt-get upgrade -y kubeadm=1.18.5-00
+kubeadm upgrade apply v1.18.5
+kubectl get nodes (display kubelet, not kube-apiserver)
+apt-get upgrade -y kubelet=1.18.5-00
+systemctl restart kubelet
+
+for worker:
+kubectl drain node01 (from master)
+apt-get ugprade -y kubeadm=1.18.5-00 (on worker node)
+apt-get upgrade -y kubelet=1.18.5-00 (on worker node)
+kubeadm upgrade node; or (dibawah, preferable ini)
+kubeadm upgrade node config --kubelet-version 1.18.5 (on worker node)
+systemctl restart kubelet (on worker node)
+kubectl uncordon node01 (from master)
+
+backup/config
+-------------
+kubectl get all --all-namespaces -o yaml > all-deploy-services.yaml
