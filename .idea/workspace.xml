@@ -17,6 +17,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3acc9e09-027d-4829-9702-0c8ed209e4a5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/role-binding-definition.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/role-definition.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cheatsheet-k8s" beforeDir="false" afterPath="$PROJECT_DIR$/cheatsheet-k8s" afterDir="false" />
     </list>
@@ -66,7 +68,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593417302501</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit pertama dr pycharm">
+      <created>1593418823510</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1593418823510</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,21 +103,26 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="commit pertama dr pycharm" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit pertama dr pycharm" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="542" y="229" key="#Notifications" timestamp="1593418561390">
+    <state x="542" y="229" key="#Notifications" timestamp="1593418740535">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="542" y="229" key="#Notifications/0.0.1280.680@0.0.1280.680" timestamp="1593418561390" />
+    <state x="542" y="229" key="#Notifications/0.0.1280.680@0.0.1280.680" timestamp="1593418740535" />
     <state x="111" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593415620354">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="111" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1593415620354" />
-    <state x="286" y="0" key="CommitChangelistDialog2" timestamp="1593417301724">
+    <state x="286" y="0" key="CommitChangelistDialog2" timestamp="1593418822557">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="286" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1593417301724" />
+    <state x="286" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1593418822557" />
+    <state x="126" y="146" width="1060" height="440" key="DiffContextDialog" timestamp="1593420060401">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="126" y="146" width="1060" height="440" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1593420060401" />
     <state x="437" y="121" key="FileChooserDialogImpl" timestamp="1593414966387">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -129,10 +143,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="414" y="71" key="VCS.ChangeListViewerDialog/0.0.1280.680@0.0.1280.680" timestamp="1593417501396" />
-    <state x="249" y="99" key="Vcs.Push.Dialog.v2" timestamp="1593418195887">
+    <state x="249" y="99" key="Vcs.Push.Dialog.v2" timestamp="1593418839957">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="249" y="99" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1593418195887" />
+    <state x="249" y="99" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1593418839957" />
+    <state x="351" y="100" key="VcsDiffUtil.ChangesDialog" timestamp="1593418753930">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="351" y="100" key="VcsDiffUtil.ChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1593418753930" />
     <state x="428" y="155" key="git4idea.merge.GitMergeDialog" timestamp="1593418169918">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

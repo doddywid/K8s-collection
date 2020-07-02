@@ -167,4 +167,72 @@ kubectl uncordon node01 (from master)
 backup/config
 -------------
 kubectl get all --all-namespaces -o yaml > all-deploy-services.yaml
-testing5x
+ETCD
+ectd.service
+--data-dir=/var/lib/etcd  or
+ETCDCTl_API=3
+etcdctl snapshot save snapshot.db
+etcdctl snapshop status snapshot.db
+restore --> etcdctl snapshot restore snapshot.db \
+--data-dir /var/lib/etcd-from-backup \
+--initial-cluster master-1=https://192.168.5.11:2380,master-2=https://192.168.5.12:2380 \
+--initial-cluster-token etcd-cluster-1 \
+--initial-advertise-peer=urls https://${INTERNAL_IP};2380
+systemctl daemon-reload
+service etcd restart
+
+specify CERT
+etcdctl snapshot save /tmp/snapshot-pre-boot.db \
+--endpoints=https://127.0.0.1:2397 \
+--cacert=/etc/kubernetes/pki/etcd/ca.crt \
+--cert=/etc/kubernetes/pki/etcd/server.crt \
+--key=/etc/kubernetes/pki/etcd/server.key
+
+Restore
+ETCDCTL_API=3 etcdctl --endpoints=https://[127.0.0.1]:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt \
+     --name=master \
+     --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key \
+     --data-dir /var/lib/etcd-from-backup \
+     --initial-cluster=master=https://127.0.0.1:2380 \
+     --initial-cluster-token=etcd-cluster-1 \
+     --initial-advertise-peer-urls=https://127.0.0.1:2380 \
+     snapshot restore /tmp/snapshot-pre-boot.db
+/etc/kubernets/manifests/etcd.yaml
+--data-dir=/var/lib/etcd-from-backup
+--initial-cluster-token=etcd-cluster-1
+volumeMounts:
+    - mountPath: /var/lib/etcd-from-backup
+volumes:
+  - hostPath:
+      path: /var/lib/etcd-from-backup
+
+Security
+--------
+Authentication
+kubectl create serviceaccount sa1
+kube-apiserver auth mechanism
+- static password file
+- static token file
+- certificates
+- identity service
+
+user-details.csv
+password123,user1,u0001,[group1]
+kube-apiserver options:
+--basic-auth-file=user-details.csv
+curl -v -k https://master-node-ip:6443/api/v1/pods -u "user1:password123"
+
+user-token-details.csv
+jdfhjhhuwhjqwASJHDSDJJHJhJhdjhjm,user10,u0010,[group1]
+--token-auth-file=user-token-details.csv
+curl -v -k https://master-node-ip:6443/api/v1/pods --header "Authorization Bearer jdfhjhhuwhjqwASJHDSDJJHJhJhdjhjm"
+
+if files is stored for example in /tmp/users/user-details.csv
+/etc/kubernetes/manifests/kube-apiserver.yaml need changed on:
+spec:
+    volumeMounts:
+    - mountPath: /tmp/users
+  volumes:
+  - hostPath:
+      path: /tmp/users
+
