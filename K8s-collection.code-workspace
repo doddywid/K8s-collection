@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "..\\Linux_Command_Tips"
 		}
 	],
 	"settings": {}
